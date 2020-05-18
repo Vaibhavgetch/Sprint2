@@ -1,0 +1,25 @@
+<!-- <app-all-movie></app-all-movie>
+ <app-add-movie></app-add-movie>
+-->
+<div style="text-align:center">
+    <h1>Welcome Admin</h1>
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div>
+            <button><a routerLink="/addMovie">Add Movie</a></button>
+        </div>
+        <div>
+            <button><a routerLink="/movies">All Movies</a></button>
+        </div>
+        <div>
+            <button><a routerLink="/findMovie">Find a Movie</a></button>
+        </div>
+        <div>
+            <button><a routerLink="/deleteMovie">Delete Movie</a></button>
+        </div>
+    </div>
+</nav>
+<br/>
+<router-outlet></router-outlet>

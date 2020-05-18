@@ -1,0 +1,30 @@
+<h2 style="margin-left: 15%;">Movie Details</h2>
+<div class="form-group">
+    <div class= "container">
+        <table class ="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Movie Id</th>
+                    <th>Movie Name</th>
+                    <th>Movie Director</th>
+                    <th>Movie Length</th>
+                    <th>Release Date</th>
+                    <th>Language</th>
+                    <th>Movie Genre</th>
+                </tr>
+        
+            </thead>
+            <tbody *ngFor="let movie of movies">
+                <tr>
+                    <th scope="row">{{movie.movieId}}</th>
+                    <td>{{movie.movieName}}</td>
+                    <td>{{movie.movieDirector}}</td>
+                    <td>{{movie.movieLength}}</td>
+                    <td>{{movie.movieReleaseDate}}</td>
+                    <td>{{movie.languages}}</td>
+                    <td>{{movie.movieGenre}}</td>
+                 </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

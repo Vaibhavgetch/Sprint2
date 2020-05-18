@@ -1,0 +1,99 @@
+<div class = "container-fluid mb-5">
+    <h1>Add Movie</h1>
+    <form #addMovieForm="ngForm" (ngSubmit)="onSubmitAddMovie(addMovieForm)" novalidate>
+
+        <div class="form-group">
+            <label class="form-group-level">Movie Name</label>
+            <input type="text" required #movieName="ngModel" 
+                [class.is-invalid]="movieName.invalid && movieName.touched" 
+                class = "form-control" name="movieName" [(ngModel)]="movieModel.movieName">
+            <small class ="text-danger" [class.d-none]="(movieName.valid || movieName.untouched)" >Movie Name is Required</small>
+        </div>
+
+        <div class="form-group">
+            <label class="form-group-level">Enter Movie Genre</label>
+            <input type="text" required #movieGenre="ngModel" 
+                [class.is-invalid]="movieGenre.invalid && movieGenre.touched"
+                class="form-control" name = "movieGenre" [(ngModel)]="movieModel.movieGenre">
+            <small class ="text-danger" 
+            [class.d-none]="movieGenre.valid || movieGenre.untouched" >Movie Genre is required..</small>
+        </div>
+
+        <div class="form-group">
+            <label class="form-group-level">Movie Director</label>
+            <input type="text" required #movieDirector="ngModel" 
+                [class.is-invalid]="movieDirector.invalid && movieDirector.touched"
+                class = "form-control" name="movieDirector" [(ngModel)]="movieModel.movieDirector">
+            <small class ="text-danger" 
+            [class.d-none]="movieDirector.valid || movieDirector.untouched" >Director name is required..</small>
+        </div>
+
+        <div class="form-group">
+            <label class="form-group-level">Movie Length</label>
+            <input type="number" required #movieLength="ngModel" 
+                [class.is-invalid]="movieLength.invalid && movieLength.touched"
+                class="form-control" name = "movieLength" [(ngModel)]="movieModel.movieLength">
+            <small class ="text-danger" 
+            [class.d-none]="movieLength.valid || movieLength.untouched" >This field is required..</small>
+        </div>
+
+
+     <!--   <div class="form-group">
+
+            <label class="form-group-level">Movie Languages</label>
+              <select class="custom-select" required #movieLanguages="ngModel">
+                <option></option>
+
+
+              </select>
+            <small class ="text-danger" 
+            [class.d-none]="movieLanguages.valid || movieLanguages.untouched" >This field is required..</small>
+        </div>
+
+  -->
+        <div class="form-group">
+            <label class="form-group-level">Enter Release Date</label>
+            <input type="date" required #movieReleaseDate="ngModel" 
+                [class.is-invalid]="movieReleaseDate.invalid && movieReleaseDate.touched"
+                class="form-control" name = "movieReleaseDate" [(ngModel)]="movieModel.movieReleaseDate">
+            <small class ="text-danger" 
+            [class.d-none]="movieReleaseDate.valid || movieReleaseDate.untouched" >This field is required..</small>
+        </div>
+              
+       
+        <br/>
+        <button [disabled]="addMovieForm.form.invalid" class="btn btn-primary" type="submit">Add Movie</button>
+
+    </form>
+
+    <div class="container" *ngIf="show">
+        <h1>Added Movie Detail</h1> 
+            <table class="table">
+               
+                <tr>
+                    <th>Movie Id</th><td>{{movieresp.movieId}}</td>
+                </tr>
+                <tr>
+                    <th>Movie Name</th><td>{{movieresp.movieName}}</td>
+                </tr>
+                <tr>
+                    <th>Movie Director</th><td>{{movieresp.movieDirector}}</td>
+                </tr>
+                <tr>
+                    <th>Movie Length</th><td>{{movieresp.movieLength}}</td>
+                </tr>
+              
+                <tr>
+                    <th>Release Date</th><td>{{movieresp.movieReleaseDate}}</td>
+                </tr>
+                <tr>
+                    <th>language</th><td>{{movieresp.languages}}</td>
+                </tr>
+                <tr>
+                    <th>Movie Genre</th><td>{{movieresp.movieGenre}}</td>
+                </tr>
+            </table>
+    </div>
+
+</div>
+

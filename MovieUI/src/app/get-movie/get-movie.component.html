@@ -1,0 +1,49 @@
+<div class = "container-fluid mb-5">
+    <h1>Get Movie Detail</h1>
+    <form #getMovieForm = "ngForm" (ngSubmit)="getMovie(getMovieForm)">
+        <div class="form-group">
+            <label class="form-group'level">Movie Id</label>
+            <input type="text" required #movieId="ngModel" pattern="^\d+$" name="movieId" class="form-control" ngModel>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="movieId.errors && (movieId.dirty || movieId.touched)">
+            <div *ngif="movieId.errors.required"> 
+                Movie Id is required
+            </div>
+        
+            <div *ngIf="movieId.errors.pattern">
+                   Movie Id should be numeric
+            </div>
+        </div>
+
+        <button [disabled]="getMovieForm.form.invalid" class="btn btn-primary" type="submit">Find</button>
+    </form>
+
+
+    <div class="container" *ngIf="check">
+        <table class="table">
+            <tr>
+                <th>Movie Id</th><td>{{movie.movieId}}</td>
+            </tr>
+            <tr>
+                <th>movie Name</th><td>{{movie.movieName}}</td>
+            </tr>
+            <tr>
+                <th>movie Director</th><td>{{movie.movieDirector}}</td>
+            </tr>
+            <tr>
+                <th>Movie Length</th><td>{{movie.movieLength}}</td>
+            </tr>
+            <tr>
+                <th>movie ReleaseDate</th><td>{{movie.movieReleaseDate}}</td>
+            </tr>
+            <tr>
+                <th>Manager Languages</th><td>{{movie.languages}}</td>
+            </tr>
+            <tr>
+                <th>Movie genre</th><td>{{movie.movieGenre}}</td>
+            </tr>
+        </table>
+    </div>
+         
+</div> 
