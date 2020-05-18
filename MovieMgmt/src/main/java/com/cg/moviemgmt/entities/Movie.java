@@ -2,10 +2,8 @@ package com.cg.moviemgmt.entities;
 
 import java.time.LocalDate;
 
-import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,8 +19,7 @@ public class Movie {
 	private String movieDirector;
 	private int movieLength;
 	private LocalDate movieReleaseDate;
-	@ElementCollection
-	private List<String> languages;
+	private String languages;
 	private String movieGenre;
 	
 	public int getMovieId() {
@@ -73,11 +70,11 @@ public class Movie {
 		this.movieGenre = movieGenre;
 	}
 
-	public List<String> getLanguages() {
+	public String getLanguages() {
 		return languages;
 	}
 
-	public void setLanguages(List<String> languages) {
+	public void setLanguages(String languages) {
 		this.languages = languages;
 	}
 	

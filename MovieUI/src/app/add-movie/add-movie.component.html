@@ -38,19 +38,27 @@
         </div>
 
 
-     <!--   <div class="form-group">
-
-            <label class="form-group-level">Movie Languages</label>
-              <select class="custom-select" required #movieLanguages="ngModel">
-                <option></option>
-
-
-              </select>
-            <small class ="text-danger" 
-            [class.d-none]="movieLanguages.valid || movieLanguages.untouched" >This field is required..</small>
+       
+  <!--
+        <div>
+            <label>Available languages</label>
+            <div class="form-check" *ngFor="let lg of lang">
+                <input class="form-check-input" type="checkbox" #movieLanguage="ngModel" required name="languages" [(ngModel)]="movieModel.languages[lg]">
+                <p class="form-check-label">{{lg}}</p>
+            </div>
         </div>
+   -->
+  
+   <div class="form-group">
+    <label class="form-group-level">Enter language</label>
+    <input type="text" required #languages="ngModel" 
+        [class.is-invalid]="languages.invalid && languages.touched"
+        class="form-control" name = "languages" [(ngModel)]="movieModel.languages">
+    <small class ="text-danger" 
+    [class.d-none]="languages.valid || languages.untouched" >language is required..</small>
+   </div>
 
-  -->
+
         <div class="form-group">
             <label class="form-group-level">Enter Release Date</label>
             <input type="date" required #movieReleaseDate="ngModel" 

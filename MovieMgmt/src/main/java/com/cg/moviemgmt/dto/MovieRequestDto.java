@@ -1,7 +1,7 @@
 package com.cg.moviemgmt.dto;
 
 import java.time.LocalDate;
-import java.util.List;
+
 
 public class MovieRequestDto {
 	
@@ -9,7 +9,7 @@ public class MovieRequestDto {
 	 private String  movieGenre ; 
 	 private String	movieDirector ;
 	 private int movieLength  ;
-	 private List<String> languages;
+	 private String languages;
 	 private LocalDate movieReleaseDate ;
 	 
 	public String getMovieName() {
@@ -42,10 +42,10 @@ public class MovieRequestDto {
 	public void setMovieReleaseDate(LocalDate movieReleaseDate) {
 		this.movieReleaseDate = movieReleaseDate;
 	}
-	public List<String> getLanguages() {
+	public String getLanguages() {
 		return languages;
 	}
-	public void setLanguages(List<String> languages) {
+	public void setLanguages(String languages) {
 		this.languages = languages;
 	}
 

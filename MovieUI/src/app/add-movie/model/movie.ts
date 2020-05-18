@@ -6,10 +6,10 @@ export class movie{
 	 movieDirector : String;
 	 movieLength : Number;
 	 movieReleaseDate : Date;
-	 languages: String[];
+	 languages: String;
 	 
 
-	 constructor(movieName : String,movieGenre : String,movieDirector : String,movieLength : Number,languages: String[],movieReleaseDate : Date){
+	 constructor(movieName : String,movieGenre : String,movieDirector : String,movieLength : Number,languages: String,movieReleaseDate : Date){
 
 	 this.movieName =movieName;
 	 this.movieGenre =movieGenre;

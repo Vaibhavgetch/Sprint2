@@ -5,12 +5,12 @@ export class movieResponse{
     movieGenre : String;
     movieDirector : String;
     movieLength : Number;
-    languages: String[];
+    languages: String;
     movieReleaseDate : Date;
    
    
 
-    constructor(movieId: Number,movieName : String,movieReleaseDate : Date,movieGenre : String,movieDirector : String,movieLength : Number,languages: String[]){
+    constructor(movieId: Number,movieName : String,movieReleaseDate : Date,movieGenre : String,movieDirector : String,movieLength : Number,languages: String){
              
         this.movieId=movieId;
         this.movieName=movieName ;

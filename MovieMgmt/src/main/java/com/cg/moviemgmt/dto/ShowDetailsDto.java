@@ -2,13 +2,15 @@ package com.cg.moviemgmt.dto;
 
 import java.sql.Time;
 import java.util.* ;
+
+import com.cg.moviemgmt.entities.Movie;
 public class ShowDetailsDto {
 
 	private int showId;
 	private String showName;
 	private Time starttime ;
 	private Time endtime  ;
-	private String movieName ;
+	private Movie movieName ;
 	private List<Integer>seatsId;
 	
 	public int getShowId() {
@@ -35,10 +37,11 @@ public class ShowDetailsDto {
 	public void setEndtime(Time endtime) {
 		this.endtime = endtime;
 	}
-	public String getMovieName() {
+
+	public Movie getMovieName() {
 		return movieName;
 	}
-	public void setMovieName(String movieName) {
+	public void setMovieName(Movie movieName) {
 		this.movieName = movieName;
 	}
 	public List<Integer> getSeatsId() {

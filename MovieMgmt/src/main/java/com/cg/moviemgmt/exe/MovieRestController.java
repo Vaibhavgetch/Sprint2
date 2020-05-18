@@ -77,8 +77,7 @@ public class MovieRestController {
 		movie.setMovieGenre(movieDto.getMovieGenre());
 		movie.setMovieLength(movieDto.getMovieLength());
 		movie.setMovieReleaseDate(movieDto.getMovieReleaseDate());
-		List<String> list = movieDto.getLanguages();
-		movie.setLanguages(list);
+		movie.setLanguages(movieDto.getLanguages());
 		return movie;
 	}
 	

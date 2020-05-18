@@ -2,12 +2,17 @@ package com.cg.moviemgmt.dto;
 
 import java.sql.Time;
 
+import com.cg.moviemgmt.entities.Movie;
+
 public class ShowRequestDto {
 	
 	private Time showStartTime ;
 	private Time showEndTime ;
     private String showName ;
-    private String movieName ;
+    private Movie movieName ;
+	private int theaterId;
+    private int screenId;
+    
 	
     public Time getShowStartTime() {
 		return showStartTime;
@@ -27,12 +32,26 @@ public class ShowRequestDto {
 	public void setShowName(String showName) {
 		this.showName = showName;
 	}
-	public String getMovieName() {
+	public Movie getMovieName() {
 		return movieName;
 	}
-	public void setMovieName(String movieName) {
+	public void setMovieName(Movie movieName) {
 		this.movieName = movieName;
 	}
+	public int getTheaterId() {
+		return theaterId;
+	}
+	public void setTheaterId(int theaterId) {
+		this.theaterId = theaterId;
+	}
+	public int getScreenId() {
+		return screenId;
+	}
+	public void setScreenId(int screenId) {
+		this.screenId = screenId;
+	}
+	
+	
 	
 
 }

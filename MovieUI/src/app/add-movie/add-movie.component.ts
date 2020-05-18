@@ -11,9 +11,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./add-movie.component.css']
 })
 export class AddMovieComponent implements OnInit {
- // lang=['Hindi','English','Tamil']
+ 
 
-  movieModel = new movie("","","",0,[],null);
+  movieModel = new movie("","","",0,"",null);
 
   movieresp:movieResponse=null;
   show:boolean=false;
@@ -30,15 +30,14 @@ export class AddMovieComponent implements OnInit {
    let details = addMovieForm.value ;
    
    let movieName=details.movieName;
-  
-
    let movieGenre=details.movieGenre;
    let movieDirector=details.movieDirector;
- 
    let movieLength=details.movieLength;
-   let movieLanguage=details.movielanguages;
+   console.log(movieLength) ;
+   let languages=details.languages;
+   console.log(languages) ;
    let movieReleaseDate=details.movieReleaseDate;
-   let movieobj :movie= new movie(movieName,movieGenre,movieDirector,movieLength,movieLanguage,movieReleaseDate);
+   let movieobj :movie= new movie(movieName,movieGenre,movieDirector,movieLength,languages,movieReleaseDate);
    
    let result : Observable<movieResponse> = this.__service.addMovie(movieobj);
    result.subscribe((response:movieResponse)=>{

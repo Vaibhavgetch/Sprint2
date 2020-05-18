@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.OneToOne;
+
 import java.util.*;
 import org.springframework.data.annotation.Id;
 
@@ -21,7 +23,9 @@ public class Show {
 	@ElementCollection
 	private List<Integer> seatsId;
 	private String showName ;
-    private String movieName ;
+	@OneToOne
+	@Column(name = "movie_name")
+    private Movie movieName ;
     private int theaterId;
     private int screenId;
     
@@ -57,10 +61,11 @@ public class Show {
 	public void setSeatsId(List<Integer> seatsId) {
 		this.seatsId = seatsId;
 	}
-	public String getMovieName() {
+
+	public Movie getMovieName() {
 		return movieName;
 	}
-	public void setMovieName(String movieName) {
+	public void setMovieName(Movie movieName) {
 		this.movieName = movieName;
 	}
 	public int getTheaterId() {

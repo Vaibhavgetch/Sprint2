@@ -40,18 +40,23 @@ public class ShowRestController {
 		detailsDto.setSeatsId(show.getSeatsId());
 		detailsDto.setShowId(show.getShowId());
 		detailsDto.setShowName(show.getShowName());
-		detailsDto.setSeatsId(seats());
+		detailsDto.setSeatsId(addSeats());
 		return detailsDto;
 	}
 
 	private Show convertShow(ShowRequestDto showDto) {
 		Show show = new Show();
 		show.setMovieName(showDto.getMovieName());
-		
+		show.setShowName(showDto.getShowName());
+		show.setSeatsId(addSeats());
+		show.setScreenId(showDto.getScreenId());
+		show.setTheaterId(showDto.getTheaterId());
+		show.setShowStartTime(showDto.getShowStartTime());
+		show.setShowEndTime(showDto.getShowEndTime());
 		return show;
 	}
 	
-	private List<Integer> seats()
+	private List<Integer> addSeats()
 	{
 		List<Integer> seatsId = new ArrayList<>();
 		seatsId.add(101);
@@ -62,3 +67,4 @@ public class ShowRestController {
 	
 
 }
+
