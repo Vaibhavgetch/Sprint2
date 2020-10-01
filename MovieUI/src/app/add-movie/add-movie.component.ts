@@ -17,10 +17,12 @@ export class AddMovieComponent implements OnInit {
 
   movieresp:movieResponse=null;
   show:boolean=false;
-   __service:MovieServiceService;
+  // __service:MovieServiceService;
 
-  constructor( __service:MovieServiceService) {
-   this.__service=__service ;
+  constructor(private __service:MovieServiceService) {
+    //Adding private access specifier in constructor reduces the boilerplate code and saves lines of Code
+    //Now this.__service will work same without providing new variable.
+//    this.__service=__service ;
    }
 
   ngOnInit(): void {
