@@ -1,1 +1,2 @@
-# Sprint2 Full MOvie MOdule.
+# Sprint2 Full Movie Management.
+Actor - Admin
